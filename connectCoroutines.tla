@@ -191,7 +191,7 @@ RaceFree ==
 \* `t2` state, since its initial execution is trivial, it can only `Await`,
 \* while `t1` can start computations immediately.
 AlmostConcurrentFree ==
-  /\ [][(t1 /= t1' /\ t2 /= "Init") => t2 = "Await"]_<<t1,t2>>
-  /\ [][(t2 /= t2' /\ t2 /= "Init") => t1 = "Await"]_<<t1,t2>>
+  /\ [][(t1 /= t1' /\ t2 /= "Init") => (t2 = "Await" /\ t2' = "Await")]_<<t1,t2>>
+  /\ [][(t2 /= t2' /\ t2 /= "Init") => (t1 = "Await" /\ t1' = "Await")]_<<t1,t2>>
   
 =============================================================================
