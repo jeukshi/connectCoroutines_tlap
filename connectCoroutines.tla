@@ -26,8 +26,7 @@ MVarStates == { "Full", "Empty" }
 
 IORefStates == { "t1", "t2" }
 
-\* My TLAToolbox returns an unclickable error when I enable it, so no type checking for me.
-TypeOK == 
+TypeOk ==
   /\ t1 \in ThreadStates
   /\ t2 \in ThreadStates
   /\ t1mvar \in MVarStates
